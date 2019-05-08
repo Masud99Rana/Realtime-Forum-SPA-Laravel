@@ -11,6 +11,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class QuestionController extends Controller
 {
+
+
+
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -65,16 +72,7 @@ class QuestionController extends Controller
         return new QuestionResource($question);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Question  $question
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Question $question)
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.

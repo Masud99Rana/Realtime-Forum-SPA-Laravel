@@ -6,7 +6,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+
+use Tymon\JWTAuth\Contracts\JWTSubject;
+
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
@@ -33,6 +36,42 @@ class User extends Authenticatable
     public function question(){
         return $this->hasMany(Question::class);
     }
+
+
+
+
+//-> Mutator for making password bcrypt format
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = bcrypt($value);
+
+    }
+
+    public function getJWTIdentifier()
+        {
+            return $this->getKey();
+        }
+
+    public function getJWTCustomClaims()
+        {
+            return [];
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * The attributes that should be cast to native types.
