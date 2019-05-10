@@ -3,21 +3,23 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-
 import Login from '../components/login/Login';
-
-
+import Logout from '../components/login/Logout';
+import signup from '../components/login/signup';
+import Forum from '../components/forum/Forum';
 
 
 const routes = [
-  { path: '/login', component: Login }
+  { path: '/login', component: Login },
+  { path: '/logout', component: Logout },
+  { path: '/signup', component: signup },
+  { path: '/forum', component: Forum , name: 'forum'}
 ]
 
 const router = new VueRouter({
-  routes // short for `routes: routes`
+  routes, // short for `routes: routes`
   hashbang: false,
   mode: 'history'
-
 })
 
 

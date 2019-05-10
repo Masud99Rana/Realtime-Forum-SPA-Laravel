@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::view('/','home');
+Route::view('/{any}','home');

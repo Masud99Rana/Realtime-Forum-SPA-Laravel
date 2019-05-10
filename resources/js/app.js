@@ -25,6 +25,12 @@ Vue.use(Vuetify)
 
 
 
+import User from './Helpers/User'
+window.User = User
+
+
+window.EvenBus = new Vue();
+
 
 
 // const files = require.context('./', true, /\.vue$/i);
