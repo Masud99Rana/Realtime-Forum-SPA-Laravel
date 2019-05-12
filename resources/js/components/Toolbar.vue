@@ -49,7 +49,7 @@
 
 		created(){
 			EvenBus.$on('logout', () => {
-				User.logout()
+				User.logout()// this come from Logout.vue
 			})
 		}
 	}

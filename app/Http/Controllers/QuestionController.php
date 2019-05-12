@@ -43,8 +43,8 @@ class QuestionController extends Controller
     public function store(Request $request)
     {   
         //-> way: 01
-        Question::create($request->all());
-        return response('created', Response::HTTP_CREATED);
+        //Question::create($request->all());
+        //return response('created', Response::HTTP_CREATED);
 
         //-> way: 02 if want user id automatically insert
         // auth()->user()->question()->create($request->all());
@@ -52,9 +52,9 @@ class QuestionController extends Controller
 
  
         //-> way: 03 it will send the created question
-        // // $request['slug']= str_slug($request->title); //for slug we are using boot method
-        // $question = auth()->user()->question()->create($request->all());
-        // return response(new QuestionResource($question), Response::HTTP_CREATED);
+        //$request['slug']= str_slug($request->title); //for slug we are using boot method
+        $question = auth()->user()->question()->create($request->all());
+        return response(new QuestionResource($question), Response::HTTP_CREATED);
     }
 
     /**

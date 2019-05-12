@@ -13,10 +13,14 @@ class QuestionResource extends JsonResource
         
         return [
             'title' => $this->title,
-            'path' => $this->path, // this come from Question model pathAttribute
+            'slug' => $this->slug,
+            'replies' => ReplyResource::collection($this->replies),
+            'reply_count' => $this->replies->count(),
+            'path' => $this->path,
             'body' => $this->body,
             'created_at' => $this->created_at->diffForHumans(),
-            'user' => $this->user->name // this is come from relationship
+            'user' => $this->user->name,
+            'user_id' => $this->user_id
         ]; 
       
     }

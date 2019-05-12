@@ -10,6 +10,17 @@ use App\User;
 
 class Reply extends Model
 {	
+
+
+    protected static function boot(){
+        
+        parent::boot();
+
+        static::creating(function($reply){
+            $reply->user_id=auth()->id();
+        });
+    }
+    
 	protected $fillable = ['body','question_id', 'user_id'];
 
     public function question(){

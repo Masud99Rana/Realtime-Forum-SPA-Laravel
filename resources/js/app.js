@@ -25,6 +25,21 @@ Vue.use(Vuetify)
 
 
 
+// Vue-SimpleMDE
+import VueSimplemde from 'vue-simplemde'
+import 'simplemde/dist/simplemde.min.css'
+Vue.use(VueSimplemde)
+
+
+
+import md from 'marked'
+window.md = md
+//End Vue-SimpleMDE
+
+
+
+
+
 import User from './Helpers/User'
 window.User = User
 
