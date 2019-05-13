@@ -60,22 +60,20 @@ class ReplyController extends Controller
     public function store(Question $question, Request $request)
     {
   
-        $reply = $question->replies()->create($request->all());
-        return response(['reply'=>  $reply], Response::HTTP_CREATED);
-
-
-
         // $reply = $question->replies()->create($request->all());
+        // return response(['reply'=>  $reply], Response::HTTP_CREATED);
 
-        // $user = $question->user;
 
-        // // $user->notify(new NewReplyNotification($reply));
 
-        // if ($reply->user_id !== $question->user_id) {
-        //     $user->notify(new NewReplyNotification($reply));
-        // }
+        $reply = $question->replies()->create($request->all());
+        $user = $question->user;
+        // $user->notify(new NewReplyNotification($reply));
 
-        // return response(['reply'=> new ReplyResource($reply)],Response::HTTP_CREATED);
+        if ($reply->user_id !== $question->user_id) {
+            $user->notify(new NewReplyNotification($reply));
+        }
+
+        return response(['reply'=> new ReplyResource($reply)],Response::HTTP_CREATED);
     }
 
     /**
