@@ -33,7 +33,7 @@ export default {
 		}
 	},
 
-	components: {question},
+	components: {question,AppSidebar},
 
 	created(){
 		axios.get('/api/question')

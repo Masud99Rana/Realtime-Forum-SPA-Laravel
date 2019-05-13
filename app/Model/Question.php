@@ -14,6 +14,8 @@ class Question extends Model
 
     // protected $guarded = [];
 
+
+    //what relationship we want load
     protected $with = ['replies'];
 
 

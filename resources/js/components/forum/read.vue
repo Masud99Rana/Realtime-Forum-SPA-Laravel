@@ -14,14 +14,14 @@
 		>				
 		</show-question>
 
-<!-- 		<v-container>
+		<v-container>
 			<replies :question="question"></replies>
 
 			<new-reply v-if="loggedIn" :questionSlug="question.slug"></new-reply>
 			<div v-else class="mt-4">				
 				<router-link to="/login">Login in to Reply </router-link>
 			</div>
-		</v-container> -->
+		</v-container>
 
 	</div>
 </template>
@@ -30,13 +30,13 @@
 import ShowQuestion from './ShowQuestion'
 import EditQuestion from './editQuestion'
 
-// import Replies from '../reply/replies'
-// import NewReply from '../reply/newReply'
+import Replies from '../reply/replies'
+import NewReply from '../reply/newReply'
 
 	export default {
 
-		// components:{ShowQuestion, EditQuestion, Replies, NewReply},
-		components:{ShowQuestion, EditQuestion},
+		components:{ShowQuestion, EditQuestion, Replies, NewReply},
+		
 
 		data(){
 			return {
