@@ -17,5 +17,25 @@ Route::get('/', function () {
 
 
 Route::view('/','home');
-Route::view('/{any}','home');
+// Route::view('/{any}','home');
+// Route::view('/{any}/{any1}','home');
+// 
+// 
+// 
+// 
+
+Route::any('{any}', function () {
+    return view('home');
+})->where('any', '.*');
+
+
 Route::view('/{any}/{any1}','home');
+
+// Route::get('/{vue_capture?}', function () {
+//  return view('home');
+// })->where('vue_capture', '[\/\w\.-]*');
+
+
+// Route::get('/{vue_capture?}/{vue_captureee?}', function () {
+//  return view('home');
+// })->where('vue_capture', '[\/\w\.-]*');

@@ -5,7 +5,7 @@
             <v-icon :color="color">add_alert</v-icon>{{unreadCount}}
         </v-btn>
       <v-list>
-		<v-list-tile v-for="item in unread" :key="item.id">
+		<v-list-tile v-for="(item,index) in unread" key="index">
 			
 			<!-- <a :href="'http://realtimeapp/'+item.path" @click="readIt(item)">{{item.question}}</a> -->
 
