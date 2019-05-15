@@ -37,7 +37,10 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => 'ap1',
-                'encrypted' => true
+                'encrypted' => true,
+                'host' => 'http://realtimeapp2.mr',
+                'port' => 6001,
+                'scheme' => 'http'
             ],
         ],
 

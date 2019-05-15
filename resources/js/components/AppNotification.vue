@@ -7,7 +7,11 @@
       <v-list>
 		<v-list-tile v-for="item in unread" :key="item.id">
 			
-			<a :href="'http://realtimeapp/'+item.path" @click="readIt(item)">{{item.question}}</a>
+			<!-- <a :href="'http://realtimeapp/'+item.path" @click="readIt(item)">{{item.question}}</a> -->
+
+			<router-link :to="'/'+item.path">
+			            <v-list-tile-title @click="readIt(item)">{{item.question}}</v-list-tile-title>
+			</router-link>
         </v-list-tile>
         <br>
 
