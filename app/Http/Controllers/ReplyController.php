@@ -126,7 +126,13 @@ class ReplyController extends Controller
         return response('null', Response::HTTP_NO_CONTENT);
 
        
-
-        // broadcast(new DeleteReplyEvent($reply->id))->toOthers();
+        broadcast(new DeleteReplyEvent($reply->id))->toOthers();
     }
 }
+
+
+
+
+
+
+

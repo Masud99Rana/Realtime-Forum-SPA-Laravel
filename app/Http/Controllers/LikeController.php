@@ -26,7 +26,7 @@ class LikeController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        // broadcast(new LikeEvent($reply->id,1))->toOthers();
+        broadcast(new LikeEvent($reply->id,1))->toOthers();
     }
 
     
@@ -34,9 +34,7 @@ class LikeController extends Controller
 
         // $reply->like()->where('user_id', '1')->first()->delete();
 
-        //
         $reply->like()->where('user_id', auth()->id())->first()->delete();
-
-        // broadcast(new LikeEvent($reply->id,0))->toOthers();
+        broadcast(new LikeEvent($reply->id,0))->toOthers();
     }
 }

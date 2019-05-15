@@ -12,9 +12,9 @@ class Exception{
             User.logout()
         }
 
-        // if(error == 'Token is Invalid'){
-        //     User.logout()
-        // }
+        if(error == 'Token is Invalid'){
+            User.logout()
+        }
     }
 }
 
