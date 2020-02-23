@@ -68,7 +68,7 @@ Basic understanding of the technologies that i have mentioned in "[Built With](#
 
 1. Clone the repo
 ```sh
-git clone https://github.com/Masud99Rana/Realtime-Forum-SPA_Laravel
+git clone https://github.com/Masud99Rana/Realtime-Forum-SPA-Laravel.git
 ```
 2. Run **composer install**
 3. Run **php artisan key:generate**
